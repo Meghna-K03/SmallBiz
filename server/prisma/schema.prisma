@@ -1,0 +1,72 @@
+// SmallBiz Lens V1 database schema (PostgreSQL on Supabase).
+//
+// Current Stock = Opening Stock + SUM(Purchase.quantity) - SUM(Sale.quantity)
+// It is computed from these tables, never stored.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Product {
+  id            String   @id @default(uuid())
+  name          String
+  category      String
+  unit          String
+  sellingPrice  Decimal  @db.Decimal(10, 2)
+  purchasePrice Decimal  @db.Decimal(10, 2)
+  openingStock  Int
+  minStockLevel Int
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  sales     Sale[]
+  purchases Purchase[]
+}
+
+model Sale {
+  id           String   @id @default(uuid())
+  productId    String
+  quantity     Int
+  // Price charged at the time of sale; may differ from Product.sellingPrice later.
+  sellingPrice Decimal  @db.Decimal(10, 2)
+  date         DateTime @db.Date
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  product Product @relation(fields: [productId], references: [id], onDelete: Restrict)
+
+  @@index([productId])
+  @@index([date])
+}
+
+model Purchase {
+  id            String   @id @default(uuid())
+  productId     String
+  quantity      Int
+  purchasePrice Decimal  @db.Decimal(10, 2)
+  date          DateTime @db.Date
+  supplier      String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  product Product @relation(fields: [productId], references: [id], onDelete: Restrict)
+
+  @@index([productId])
+  @@index([date])
+}
+
+model Expense {
+  id          String   @id @default(uuid())
+  category    String
+  amount      Decimal  @db.Decimal(10, 2)
+  date        DateTime @db.Date
+  description String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([date])
+}
