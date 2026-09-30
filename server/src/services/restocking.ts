@@ -2,6 +2,7 @@ import type { Prisma, PrismaClient } from '@prisma/client'
 import { prisma as defaultPrisma } from '../lib/prisma'
 import { getAllProductStock, type ProductStock, type StockStatus } from './analytics'
 import { DEFAULT_HORIZON_DAYS, getDemandForecast, type DataStatus, type ProductForecast } from './forecast'
+import { getValidatedForecast, type ValidatedForecast } from './forecasting'
 import type { AnalysisPeriod } from './insights'
 
 /**
@@ -107,14 +108,51 @@ export function buildRecommendation(stock: ProductStock, forecast: ProductForeca
 
 // ---------- Database-backed ----------
 
+/**
+ * Adapts the validated forecast to the baseline forecast shape so buildRecommendation
+ * (and its tests) stay unchanged. Only the demand number and its source differ.
+ */
+export function validatedToForecasts(v: ValidatedForecast): ProductForecast[] {
+  return v.products.map((p) => ({
+    productId: p.productId,
+    productName: p.productName,
+    category: p.category,
+    historicalUnitsSold: p.historicalUnitsSold,
+    saleRecords: p.saleRecords,
+    firstSaleDate: null,
+    lastSaleDate: null,
+    historyDays: v.historyPeriod?.days ?? 0,
+    averageDailyDemand: p.averageDailyDemand,
+    forecastHorizonDays: p.forecastHorizonDays,
+    forecastedDemand: p.predictedDemand,
+    dataStatus: p.dataStatus,
+  }))
+}
+
+/**
+ * forecastSource 'baseline' (default) uses the historical-average forecast, exactly as before.
+ * 'validated' uses the temporally validated forecast (forecasting/); pass `validated` to reuse an
+ * already-loaded one so every figure in a response comes from the same snapshot.
+ */
 export async function getRestockingRecommendations(
-  opts: { horizonDays?: number; period?: AnalysisPeriod } = {},
+  opts: {
+    horizonDays?: number
+    period?: AnalysisPeriod
+    forecastSource?: 'baseline' | 'validated'
+    validated?: ValidatedForecast
+  } = {},
   db: Db = defaultPrisma,
 ) {
   const horizonDays = opts.horizonDays ?? DEFAULT_HORIZON_DAYS
+  const useValidated = opts.forecastSource === 'validated' || opts.validated !== undefined
   const [stock, forecast] = await Promise.all([
     getAllProductStock(db),
-    getDemandForecast({ horizonDays, period: opts.period }, db),
+    useValidated
+      ? (async () => {
+          const v = opts.validated ?? (await getValidatedForecast({ horizonDays }, db))
+          return { historyPeriod: v.historyPeriod as AnalysisPeriod | null, products: validatedToForecasts(v) }
+        })()
+      : getDemandForecast({ horizonDays, period: opts.period }, db),
   ])
   const forecastById = new Map(forecast.products.map((f) => [f.productId, f]))
   const products = stock.map((s) => buildRecommendation(s, forecastById.get(s.productId)!))
@@ -125,6 +163,7 @@ export async function getRestockingRecommendations(
 
   return {
     method: 'target-stock = forecasted-demand + minimum-stock-level',
+    forecastSource: useValidated ? ('validated' as const) : ('baseline' as const),
     note: 'Suggested quantities based on past sales; nothing is ordered automatically.',
     historyPeriod: forecast.historyPeriod,
     forecastHorizonDays: horizonDays,

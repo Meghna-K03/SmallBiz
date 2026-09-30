@@ -1,11 +1,165 @@
 @import "tailwindcss";
 
+/*
+ * SmallBiz Lens design tokens.
+ * The existing screens use Tailwind's `slate-*` and `indigo-*` classes, so the palette is applied by
+ * redefining those ramps: slate becomes a warm ivory-to-navy scale, indigo becomes the terracotta accent.
+ * Emerald (positive), amber (attention) and red (critical) keep their standard meaning.
+ */
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+
+  --color-slate-50: #faf8f4;
+  --color-slate-100: #f4f0e8;
+  --color-slate-200: #e8e2d5;
+  --color-slate-300: #d5cebd;
+  --color-slate-400: #a8a293;
+  --color-slate-500: #6f6c64;
+  --color-slate-600: #55565c;
+  --color-slate-700: #3a3f4d;
+  --color-slate-800: #242b3d;
+  --color-slate-900: #141c33;
+  --color-slate-950: #0d1324;
+
+  --color-indigo-50: #fbf1ec;
+  --color-indigo-100: #f5ddd2;
+  --color-indigo-600: #b4532a;
+  --color-indigo-700: #9a4423;
+
+  --color-accent: #b4532a;
+  --color-accent-dark: #9a4423;
+  --color-accent-soft: #fbf1ec;
 }
 
 body {
   font-family: var(--font-sans);
-  background-color: #f5f6f8;
-  color: #1f2430;
+  background-color: #f7f4ee;
+  color: #141c33;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+:focus-visible {
+  outline-color: var(--color-accent);
+}
+
+/* Login success transition: a few grocery tiles bounce in on the navy background. */
+@keyframes sb-card-out {
+  to {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.98);
+  }
+}
+@keyframes sb-pop-in {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes sb-bounce {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-5deg);
+  }
+  50% {
+    transform: translateY(-16px) rotate(6deg) scale(1.06);
+  }
+}
+@keyframes sb-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.sb-card-out {
+  animation: sb-card-out 0.32s ease-in forwards;
+}
+.sb-pop-in {
+  animation: sb-pop-in 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+.sb-bounce {
+  animation: sb-bounce 0.9s ease-in-out infinite;
+}
+.sb-fade-in {
+  animation: sb-fade-in 0.5s ease-out both;
+}
+/* Final login stage: the tiles circle the cart, then are drawn into it one by one. --a is each tile's starting
+   angle, --r its distance from the cart and --d the moment it enters the cart; the wrapper turns 540deg over
+   1.9s while each tile stays upright. */
+@keyframes sb-orbit-spin {
+  to {
+    transform: rotate(540deg);
+  }
+}
+@keyframes sb-orbit-upright {
+  from {
+    transform: rotate(calc(var(--a) * -1));
+  }
+  to {
+    transform: rotate(calc(var(--a) * -1 - 540deg));
+  }
+}
+@keyframes sb-orbit-absorb {
+  from {
+    transform: translateX(var(--r)) scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(0) scale(0.25);
+    opacity: 0;
+  }
+}
+@keyframes sb-cart-pulse {
+  0%,
+  75% {
+    transform: scale(1);
+  }
+  92% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.sb-orbit-spin {
+  animation: sb-orbit-spin 1.9s cubic-bezier(0.45, 0.05, 0.55, 0.95) forwards;
+}
+.sb-orbit-upright {
+  animation: sb-orbit-upright 1.9s cubic-bezier(0.45, 0.05, 0.55, 0.95) forwards;
+}
+.sb-orbit-absorb {
+  animation: sb-orbit-absorb 0.35s ease-in var(--d) both;
+}
+.sb-cart-pulse {
+  animation: sb-cart-pulse 1.9s ease-in-out forwards;
+}
+@media (prefers-reduced-motion: reduce) {
+  .sb-orbit-spin,
+  .sb-orbit-upright,
+  .sb-orbit-absorb,
+  .sb-cart-pulse {
+    animation-duration: 0.01s;
+  }
+  .sb-bounce {
+    animation: none;
+  }
+  .sb-pop-in,
+  .sb-card-out {
+    animation-duration: 0.01s;
+  }
 }

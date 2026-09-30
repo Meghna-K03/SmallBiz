@@ -1,0 +1,43 @@
+product_id,category,brand,product_name,pack_size_value,pack_size_unit,reference_mrp_inr
+P001,Dairy,Amul,Toned Milk,500,ml,30
+P002,Dairy,Amul,Butter,100,g,62
+P003,Dairy,Mother Dairy,Curd,400,g,50
+P004,Dairy,Amul,Cheese Slices,200,g,145
+P005,Dairy,Nestle,Paneer,200,g,95
+P006,Dairy,Fresh,Eggs 6-pack,6,unit,48
+P007,Staples,Britannia,Whole Wheat Bread,450,g,55
+P008,Staples,Aashirvaad,Atta Whole Wheat,5000,g,285
+P009,Staples,India Gate,Basmati Rice,1000,g,165
+P010,Staples,Fortune,Sunflower Oil,1000,ml,150
+P011,Staples,Tata,Salt,1000,g,28
+P012,Staples,Tata Sampann,Toor Dal,1000,g,175
+P013,Staples,Madhur,Sugar,1000,g,55
+P014,Snacks,Lay's,Classic Salted Chips,90,g,50
+P015,Snacks,Haldiram's,Aloo Bhujia,200,g,62
+P016,Snacks,Britannia,Good Day Cookies,200,g,45
+P017,Snacks,Parle,Parle-G Biscuits,800,g,90
+P018,Snacks,Cadbury,Dairy Milk,110,g,100
+P019,Snacks,Maggi,2-Minute Noodles 12pk,840,g,168
+P020,Beverages,Coca-Cola,Coke 750ml,750,ml,40
+P021,Beverages,Tata Tea,Premium Tea,500,g,275
+P022,Beverages,Nescafe,Classic Coffee,100,g,330
+P023,Beverages,Real,Mixed Fruit Juice,1000,ml,120
+P024,Beverages,Bisleri,Water 1L,1000,ml,20
+P025,Personal Care,Colgate,Toothpaste,200,g,115
+P026,Personal Care,Dove,Soap 3-pack,375,g,165
+P027,Personal Care,Head&Shoulders,Shampoo,340,ml,340
+P028,Personal Care,Gillette,Razor Cartridges 4s,4,unit,399
+P029,Personal Care,Nivea,Body Lotion,400,ml,299
+P030,Household,Surf Excel,Detergent Powder,1000,g,140
+P031,Household,Vim,Dishwash Bar 3s,600,g,60
+P032,Household,Harpic,Toilet Cleaner,1000,ml,192
+P033,Household,Lizol,Floor Cleaner,975,ml,210
+P034,Household,Good Knight,Mosquito Refill,45,ml,80
+P035,Household,Origami,Kitchen Towel 2-roll,2,unit,99
+P036,Fruits & Veg,Fresh,Banana,1000,g,60
+P037,Fruits & Veg,Fresh,Onion,1000,g,45
+P038,Fruits & Veg,Fresh,Tomato,1000,g,40
+P039,Fruits & Veg,Fresh,Potato,1000,g,38
+P040,Fruits & Veg,Fresh,Apple Shimla,1000,g,180
+P041,Baby & Misc,Pampers,Diapers M 8s,8,unit,199
+P042,Baby & Misc,Cerelac,Baby Cereal,300,g,250

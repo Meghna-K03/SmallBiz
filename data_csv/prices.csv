@@ -1,0 +1,211 @@
+product_id,category,brand,product_name,pack_size_value,pack_size_unit,platform,mrp_inr,selling_price_inr,available,data_source
+P001,Dairy,Amul,Toned Milk,500,ml,Blinkit,30,26,1,SAMPLE
+P001,Dairy,Amul,Toned Milk,500,ml,Zepto,30,22,1,SAMPLE
+P001,Dairy,Amul,Toned Milk,500,ml,Instamart,30,27,1,SAMPLE
+P001,Dairy,Amul,Toned Milk,500,ml,Flipkart Minutes,30,24,1,SAMPLE
+P001,Dairy,Amul,Toned Milk,500,ml,Amazon Now,30,24,1,SAMPLE
+P002,Dairy,Amul,Butter,100,g,Blinkit,62,46,1,SAMPLE
+P002,Dairy,Amul,Butter,100,g,Zepto,62,48,1,SAMPLE
+P002,Dairy,Amul,Butter,100,g,Instamart,62,56,1,SAMPLE
+P002,Dairy,Amul,Butter,100,g,Flipkart Minutes,62,47,1,SAMPLE
+P002,Dairy,Amul,Butter,100,g,Amazon Now,62,56,1,SAMPLE
+P003,Dairy,Mother Dairy,Curd,400,g,Blinkit,50,46,1,SAMPLE
+P003,Dairy,Mother Dairy,Curd,400,g,Zepto,50,40,1,SAMPLE
+P003,Dairy,Mother Dairy,Curd,400,g,Instamart,50,50,1,SAMPLE
+P003,Dairy,Mother Dairy,Curd,400,g,Flipkart Minutes,50,45,1,SAMPLE
+P003,Dairy,Mother Dairy,Curd,400,g,Amazon Now,50,50,1,SAMPLE
+P004,Dairy,Amul,Cheese Slices,200,g,Blinkit,145,114,1,SAMPLE
+P004,Dairy,Amul,Cheese Slices,200,g,Zepto,145,132,1,SAMPLE
+P004,Dairy,Amul,Cheese Slices,200,g,Instamart,145,119,1,SAMPLE
+P004,Dairy,Amul,Cheese Slices,200,g,Flipkart Minutes,145,115,1,SAMPLE
+P004,Dairy,Amul,Cheese Slices,200,g,Amazon Now,145,132,1,SAMPLE
+P005,Dairy,Nestle,Paneer,200,g,Blinkit,95,79,1,SAMPLE
+P005,Dairy,Nestle,Paneer,200,g,Zepto,95,70,1,SAMPLE
+P005,Dairy,Nestle,Paneer,200,g,Instamart,95,89,1,SAMPLE
+P005,Dairy,Nestle,Paneer,200,g,Flipkart Minutes,95,95,1,SAMPLE
+P005,Dairy,Nestle,Paneer,200,g,Amazon Now,95,,0,SAMPLE
+P006,Dairy,Fresh,Eggs 6-pack,6,unit,Blinkit,48,36,1,SAMPLE
+P006,Dairy,Fresh,Eggs 6-pack,6,unit,Zepto,48,38,1,SAMPLE
+P006,Dairy,Fresh,Eggs 6-pack,6,unit,Instamart,48,39,1,SAMPLE
+P006,Dairy,Fresh,Eggs 6-pack,6,unit,Flipkart Minutes,48,38,1,SAMPLE
+P006,Dairy,Fresh,Eggs 6-pack,6,unit,Amazon Now,48,48,1,SAMPLE
+P007,Staples,Britannia,Whole Wheat Bread,450,g,Blinkit,55,48,1,SAMPLE
+P007,Staples,Britannia,Whole Wheat Bread,450,g,Zepto,55,48,1,SAMPLE
+P007,Staples,Britannia,Whole Wheat Bread,450,g,Instamart,55,47,1,SAMPLE
+P007,Staples,Britannia,Whole Wheat Bread,450,g,Flipkart Minutes,55,,0,SAMPLE
+P007,Staples,Britannia,Whole Wheat Bread,450,g,Amazon Now,55,46,1,SAMPLE
+P008,Staples,Aashirvaad,Atta Whole Wheat,5000,g,Blinkit,285,220,1,SAMPLE
+P008,Staples,Aashirvaad,Atta Whole Wheat,5000,g,Zepto,285,244,1,SAMPLE
+P008,Staples,Aashirvaad,Atta Whole Wheat,5000,g,Instamart,285,222,1,SAMPLE
+P008,Staples,Aashirvaad,Atta Whole Wheat,5000,g,Flipkart Minutes,285,285,1,SAMPLE
+P008,Staples,Aashirvaad,Atta Whole Wheat,5000,g,Amazon Now,285,240,1,SAMPLE
+P009,Staples,India Gate,Basmati Rice,1000,g,Blinkit,165,155,1,SAMPLE
+P009,Staples,India Gate,Basmati Rice,1000,g,Zepto,165,157,1,SAMPLE
+P009,Staples,India Gate,Basmati Rice,1000,g,Instamart,165,128,1,SAMPLE
+P009,Staples,India Gate,Basmati Rice,1000,g,Flipkart Minutes,165,146,1,SAMPLE
+P009,Staples,India Gate,Basmati Rice,1000,g,Amazon Now,165,143,1,SAMPLE
+P010,Staples,Fortune,Sunflower Oil,1000,ml,Blinkit,150,105,1,SAMPLE
+P010,Staples,Fortune,Sunflower Oil,1000,ml,Zepto,150,134,1,SAMPLE
+P010,Staples,Fortune,Sunflower Oil,1000,ml,Instamart,150,113,1,SAMPLE
+P010,Staples,Fortune,Sunflower Oil,1000,ml,Flipkart Minutes,150,140,1,SAMPLE
+P010,Staples,Fortune,Sunflower Oil,1000,ml,Amazon Now,150,134,1,SAMPLE
+P011,Staples,Tata,Salt,1000,g,Blinkit,28,26,1,SAMPLE
+P011,Staples,Tata,Salt,1000,g,Zepto,28,23,1,SAMPLE
+P011,Staples,Tata,Salt,1000,g,Instamart,28,25,1,SAMPLE
+P011,Staples,Tata,Salt,1000,g,Flipkart Minutes,28,,0,SAMPLE
+P011,Staples,Tata,Salt,1000,g,Amazon Now,28,25,1,SAMPLE
+P012,Staples,Tata Sampann,Toor Dal,1000,g,Blinkit,175,132,1,SAMPLE
+P012,Staples,Tata Sampann,Toor Dal,1000,g,Zepto,175,114,1,SAMPLE
+P012,Staples,Tata Sampann,Toor Dal,1000,g,Instamart,175,160,1,SAMPLE
+P012,Staples,Tata Sampann,Toor Dal,1000,g,Flipkart Minutes,175,123,1,SAMPLE
+P012,Staples,Tata Sampann,Toor Dal,1000,g,Amazon Now,175,170,1,SAMPLE
+P013,Staples,Madhur,Sugar,1000,g,Blinkit,55,45,1,SAMPLE
+P013,Staples,Madhur,Sugar,1000,g,Zepto,55,48,1,SAMPLE
+P013,Staples,Madhur,Sugar,1000,g,Instamart,55,48,1,SAMPLE
+P013,Staples,Madhur,Sugar,1000,g,Flipkart Minutes,55,47,1,SAMPLE
+P013,Staples,Madhur,Sugar,1000,g,Amazon Now,55,,0,SAMPLE
+P014,Snacks,Lay's,Classic Salted Chips,90,g,Blinkit,50,50,1,SAMPLE
+P014,Snacks,Lay's,Classic Salted Chips,90,g,Zepto,50,,0,SAMPLE
+P014,Snacks,Lay's,Classic Salted Chips,90,g,Instamart,50,42,1,SAMPLE
+P014,Snacks,Lay's,Classic Salted Chips,90,g,Flipkart Minutes,50,35,1,SAMPLE
+P014,Snacks,Lay's,Classic Salted Chips,90,g,Amazon Now,50,39,1,SAMPLE
+P015,Snacks,Haldiram's,Aloo Bhujia,200,g,Blinkit,62,57,1,SAMPLE
+P015,Snacks,Haldiram's,Aloo Bhujia,200,g,Zepto,62,55,1,SAMPLE
+P015,Snacks,Haldiram's,Aloo Bhujia,200,g,Instamart,62,57,1,SAMPLE
+P015,Snacks,Haldiram's,Aloo Bhujia,200,g,Flipkart Minutes,62,51,1,SAMPLE
+P015,Snacks,Haldiram's,Aloo Bhujia,200,g,Amazon Now,62,62,1,SAMPLE
+P016,Snacks,Britannia,Good Day Cookies,200,g,Blinkit,45,38,1,SAMPLE
+P016,Snacks,Britannia,Good Day Cookies,200,g,Zepto,45,35,1,SAMPLE
+P016,Snacks,Britannia,Good Day Cookies,200,g,Instamart,45,42,1,SAMPLE
+P016,Snacks,Britannia,Good Day Cookies,200,g,Flipkart Minutes,45,35,1,SAMPLE
+P016,Snacks,Britannia,Good Day Cookies,200,g,Amazon Now,45,30,1,SAMPLE
+P017,Snacks,Parle,Parle-G Biscuits,800,g,Blinkit,90,75,1,SAMPLE
+P017,Snacks,Parle,Parle-G Biscuits,800,g,Zepto,90,71,1,SAMPLE
+P017,Snacks,Parle,Parle-G Biscuits,800,g,Instamart,90,78,1,SAMPLE
+P017,Snacks,Parle,Parle-G Biscuits,800,g,Flipkart Minutes,90,90,1,SAMPLE
+P017,Snacks,Parle,Parle-G Biscuits,800,g,Amazon Now,90,70,1,SAMPLE
+P018,Snacks,Cadbury,Dairy Milk,110,g,Blinkit,100,85,1,SAMPLE
+P018,Snacks,Cadbury,Dairy Milk,110,g,Zepto,100,78,1,SAMPLE
+P018,Snacks,Cadbury,Dairy Milk,110,g,Instamart,100,86,1,SAMPLE
+P018,Snacks,Cadbury,Dairy Milk,110,g,Flipkart Minutes,100,84,1,SAMPLE
+P018,Snacks,Cadbury,Dairy Milk,110,g,Amazon Now,100,91,1,SAMPLE
+P019,Snacks,Maggi,2-Minute Noodles 12pk,840,g,Blinkit,168,139,1,SAMPLE
+P019,Snacks,Maggi,2-Minute Noodles 12pk,840,g,Zepto,168,132,1,SAMPLE
+P019,Snacks,Maggi,2-Minute Noodles 12pk,840,g,Instamart,168,136,1,SAMPLE
+P019,Snacks,Maggi,2-Minute Noodles 12pk,840,g,Flipkart Minutes,168,156,1,SAMPLE
+P019,Snacks,Maggi,2-Minute Noodles 12pk,840,g,Amazon Now,168,159,1,SAMPLE
+P020,Beverages,Coca-Cola,Coke 750ml,750,ml,Blinkit,40,36,1,SAMPLE
+P020,Beverages,Coca-Cola,Coke 750ml,750,ml,Zepto,40,37,1,SAMPLE
+P020,Beverages,Coca-Cola,Coke 750ml,750,ml,Instamart,40,35,1,SAMPLE
+P020,Beverages,Coca-Cola,Coke 750ml,750,ml,Flipkart Minutes,40,34,1,SAMPLE
+P020,Beverages,Coca-Cola,Coke 750ml,750,ml,Amazon Now,40,28,1,SAMPLE
+P021,Beverages,Tata Tea,Premium Tea,500,g,Blinkit,275,226,1,SAMPLE
+P021,Beverages,Tata Tea,Premium Tea,500,g,Zepto,275,267,1,SAMPLE
+P021,Beverages,Tata Tea,Premium Tea,500,g,Instamart,275,220,1,SAMPLE
+P021,Beverages,Tata Tea,Premium Tea,500,g,Flipkart Minutes,275,226,1,SAMPLE
+P021,Beverages,Tata Tea,Premium Tea,500,g,Amazon Now,275,243,1,SAMPLE
+P022,Beverages,Nescafe,Classic Coffee,100,g,Blinkit,330,275,1,SAMPLE
+P022,Beverages,Nescafe,Classic Coffee,100,g,Zepto,330,258,1,SAMPLE
+P022,Beverages,Nescafe,Classic Coffee,100,g,Instamart,330,269,1,SAMPLE
+P022,Beverages,Nescafe,Classic Coffee,100,g,Flipkart Minutes,330,320,1,SAMPLE
+P022,Beverages,Nescafe,Classic Coffee,100,g,Amazon Now,330,238,1,SAMPLE
+P023,Beverages,Real,Mixed Fruit Juice,1000,ml,Blinkit,120,108,1,SAMPLE
+P023,Beverages,Real,Mixed Fruit Juice,1000,ml,Zepto,120,106,1,SAMPLE
+P023,Beverages,Real,Mixed Fruit Juice,1000,ml,Instamart,120,105,1,SAMPLE
+P023,Beverages,Real,Mixed Fruit Juice,1000,ml,Flipkart Minutes,120,99,1,SAMPLE
+P023,Beverages,Real,Mixed Fruit Juice,1000,ml,Amazon Now,120,115,1,SAMPLE
+P024,Beverages,Bisleri,Water 1L,1000,ml,Blinkit,20,20,1,SAMPLE
+P024,Beverages,Bisleri,Water 1L,1000,ml,Zepto,20,15,1,SAMPLE
+P024,Beverages,Bisleri,Water 1L,1000,ml,Instamart,20,18,1,SAMPLE
+P024,Beverages,Bisleri,Water 1L,1000,ml,Flipkart Minutes,20,18,1,SAMPLE
+P024,Beverages,Bisleri,Water 1L,1000,ml,Amazon Now,20,18,1,SAMPLE
+P025,Personal Care,Colgate,Toothpaste,200,g,Blinkit,115,103,1,SAMPLE
+P025,Personal Care,Colgate,Toothpaste,200,g,Zepto,115,91,1,SAMPLE
+P025,Personal Care,Colgate,Toothpaste,200,g,Instamart,115,115,1,SAMPLE
+P025,Personal Care,Colgate,Toothpaste,200,g,Flipkart Minutes,115,100,1,SAMPLE
+P025,Personal Care,Colgate,Toothpaste,200,g,Amazon Now,115,91,1,SAMPLE
+P026,Personal Care,Dove,Soap 3-pack,375,g,Blinkit,165,147,1,SAMPLE
+P026,Personal Care,Dove,Soap 3-pack,375,g,Zepto,165,125,1,SAMPLE
+P026,Personal Care,Dove,Soap 3-pack,375,g,Instamart,165,131,1,SAMPLE
+P026,Personal Care,Dove,Soap 3-pack,375,g,Flipkart Minutes,165,127,1,SAMPLE
+P026,Personal Care,Dove,Soap 3-pack,375,g,Amazon Now,165,,0,SAMPLE
+P027,Personal Care,Head&Shoulders,Shampoo,340,ml,Blinkit,340,340,1,SAMPLE
+P027,Personal Care,Head&Shoulders,Shampoo,340,ml,Zepto,340,267,1,SAMPLE
+P027,Personal Care,Head&Shoulders,Shampoo,340,ml,Instamart,340,289,1,SAMPLE
+P027,Personal Care,Head&Shoulders,Shampoo,340,ml,Flipkart Minutes,340,231,1,SAMPLE
+P027,Personal Care,Head&Shoulders,Shampoo,340,ml,Amazon Now,340,285,1,SAMPLE
+P028,Personal Care,Gillette,Razor Cartridges 4s,4,unit,Blinkit,399,381,1,SAMPLE
+P028,Personal Care,Gillette,Razor Cartridges 4s,4,unit,Zepto,399,323,1,SAMPLE
+P028,Personal Care,Gillette,Razor Cartridges 4s,4,unit,Instamart,399,332,1,SAMPLE
+P028,Personal Care,Gillette,Razor Cartridges 4s,4,unit,Flipkart Minutes,399,399,1,SAMPLE
+P028,Personal Care,Gillette,Razor Cartridges 4s,4,unit,Amazon Now,399,345,1,SAMPLE
+P029,Personal Care,Nivea,Body Lotion,400,ml,Blinkit,299,253,1,SAMPLE
+P029,Personal Care,Nivea,Body Lotion,400,ml,Zepto,299,239,1,SAMPLE
+P029,Personal Care,Nivea,Body Lotion,400,ml,Instamart,299,235,1,SAMPLE
+P029,Personal Care,Nivea,Body Lotion,400,ml,Flipkart Minutes,299,,0,SAMPLE
+P029,Personal Care,Nivea,Body Lotion,400,ml,Amazon Now,299,298,1,SAMPLE
+P030,Household,Surf Excel,Detergent Powder,1000,g,Blinkit,140,103,1,SAMPLE
+P030,Household,Surf Excel,Detergent Powder,1000,g,Zepto,140,121,1,SAMPLE
+P030,Household,Surf Excel,Detergent Powder,1000,g,Instamart,140,129,1,SAMPLE
+P030,Household,Surf Excel,Detergent Powder,1000,g,Flipkart Minutes,140,129,1,SAMPLE
+P030,Household,Surf Excel,Detergent Powder,1000,g,Amazon Now,140,140,1,SAMPLE
+P031,Household,Vim,Dishwash Bar 3s,600,g,Blinkit,60,54,1,SAMPLE
+P031,Household,Vim,Dishwash Bar 3s,600,g,Zepto,60,52,1,SAMPLE
+P031,Household,Vim,Dishwash Bar 3s,600,g,Instamart,60,52,1,SAMPLE
+P031,Household,Vim,Dishwash Bar 3s,600,g,Flipkart Minutes,60,48,1,SAMPLE
+P031,Household,Vim,Dishwash Bar 3s,600,g,Amazon Now,60,60,1,SAMPLE
+P032,Household,Harpic,Toilet Cleaner,1000,ml,Blinkit,192,170,1,SAMPLE
+P032,Household,Harpic,Toilet Cleaner,1000,ml,Zepto,192,192,1,SAMPLE
+P032,Household,Harpic,Toilet Cleaner,1000,ml,Instamart,192,162,1,SAMPLE
+P032,Household,Harpic,Toilet Cleaner,1000,ml,Flipkart Minutes,192,129,1,SAMPLE
+P032,Household,Harpic,Toilet Cleaner,1000,ml,Amazon Now,192,168,1,SAMPLE
+P033,Household,Lizol,Floor Cleaner,975,ml,Blinkit,210,193,1,SAMPLE
+P033,Household,Lizol,Floor Cleaner,975,ml,Zepto,210,177,1,SAMPLE
+P033,Household,Lizol,Floor Cleaner,975,ml,Instamart,210,171,1,SAMPLE
+P033,Household,Lizol,Floor Cleaner,975,ml,Flipkart Minutes,210,196,1,SAMPLE
+P033,Household,Lizol,Floor Cleaner,975,ml,Amazon Now,210,,0,SAMPLE
+P034,Household,Good Knight,Mosquito Refill,45,ml,Blinkit,80,80,1,SAMPLE
+P034,Household,Good Knight,Mosquito Refill,45,ml,Zepto,80,74,1,SAMPLE
+P034,Household,Good Knight,Mosquito Refill,45,ml,Instamart,80,72,1,SAMPLE
+P034,Household,Good Knight,Mosquito Refill,45,ml,Flipkart Minutes,80,60,1,SAMPLE
+P034,Household,Good Knight,Mosquito Refill,45,ml,Amazon Now,80,70,1,SAMPLE
+P035,Household,Origami,Kitchen Towel 2-roll,2,unit,Blinkit,99,82,1,SAMPLE
+P035,Household,Origami,Kitchen Towel 2-roll,2,unit,Zepto,99,78,1,SAMPLE
+P035,Household,Origami,Kitchen Towel 2-roll,2,unit,Instamart,99,77,1,SAMPLE
+P035,Household,Origami,Kitchen Towel 2-roll,2,unit,Flipkart Minutes,99,85,1,SAMPLE
+P035,Household,Origami,Kitchen Towel 2-roll,2,unit,Amazon Now,99,94,1,SAMPLE
+P036,Fruits & Veg,Fresh,Banana,1000,g,Blinkit,60,60,1,SAMPLE
+P036,Fruits & Veg,Fresh,Banana,1000,g,Zepto,60,47,1,SAMPLE
+P036,Fruits & Veg,Fresh,Banana,1000,g,Instamart,60,48,1,SAMPLE
+P036,Fruits & Veg,Fresh,Banana,1000,g,Flipkart Minutes,60,49,1,SAMPLE
+P036,Fruits & Veg,Fresh,Banana,1000,g,Amazon Now,60,55,1,SAMPLE
+P037,Fruits & Veg,Fresh,Onion,1000,g,Blinkit,45,,0,SAMPLE
+P037,Fruits & Veg,Fresh,Onion,1000,g,Zepto,45,32,1,SAMPLE
+P037,Fruits & Veg,Fresh,Onion,1000,g,Instamart,45,45,1,SAMPLE
+P037,Fruits & Veg,Fresh,Onion,1000,g,Flipkart Minutes,45,38,1,SAMPLE
+P037,Fruits & Veg,Fresh,Onion,1000,g,Amazon Now,45,41,1,SAMPLE
+P038,Fruits & Veg,Fresh,Tomato,1000,g,Blinkit,40,39,1,SAMPLE
+P038,Fruits & Veg,Fresh,Tomato,1000,g,Zepto,40,35,1,SAMPLE
+P038,Fruits & Veg,Fresh,Tomato,1000,g,Instamart,40,34,1,SAMPLE
+P038,Fruits & Veg,Fresh,Tomato,1000,g,Flipkart Minutes,40,33,1,SAMPLE
+P038,Fruits & Veg,Fresh,Tomato,1000,g,Amazon Now,40,33,1,SAMPLE
+P039,Fruits & Veg,Fresh,Potato,1000,g,Blinkit,38,34,1,SAMPLE
+P039,Fruits & Veg,Fresh,Potato,1000,g,Zepto,38,26,1,SAMPLE
+P039,Fruits & Veg,Fresh,Potato,1000,g,Instamart,38,30,1,SAMPLE
+P039,Fruits & Veg,Fresh,Potato,1000,g,Flipkart Minutes,38,35,1,SAMPLE
+P039,Fruits & Veg,Fresh,Potato,1000,g,Amazon Now,38,,0,SAMPLE
+P040,Fruits & Veg,Fresh,Apple Shimla,1000,g,Blinkit,180,146,1,SAMPLE
+P040,Fruits & Veg,Fresh,Apple Shimla,1000,g,Zepto,180,161,1,SAMPLE
+P040,Fruits & Veg,Fresh,Apple Shimla,1000,g,Instamart,180,135,1,SAMPLE
+P040,Fruits & Veg,Fresh,Apple Shimla,1000,g,Flipkart Minutes,180,144,1,SAMPLE
+P040,Fruits & Veg,Fresh,Apple Shimla,1000,g,Amazon Now,180,152,1,SAMPLE
+P041,Baby & Misc,Pampers,Diapers M 8s,8,unit,Blinkit,199,165,1,SAMPLE
+P041,Baby & Misc,Pampers,Diapers M 8s,8,unit,Zepto,199,161,1,SAMPLE
+P041,Baby & Misc,Pampers,Diapers M 8s,8,unit,Instamart,199,169,1,SAMPLE
+P041,Baby & Misc,Pampers,Diapers M 8s,8,unit,Flipkart Minutes,199,157,1,SAMPLE
+P041,Baby & Misc,Pampers,Diapers M 8s,8,unit,Amazon Now,199,,0,SAMPLE
+P042,Baby & Misc,Cerelac,Baby Cereal,300,g,Blinkit,250,220,1,SAMPLE
+P042,Baby & Misc,Cerelac,Baby Cereal,300,g,Zepto,250,211,1,SAMPLE
+P042,Baby & Misc,Cerelac,Baby Cereal,300,g,Instamart,250,191,1,SAMPLE
+P042,Baby & Misc,Cerelac,Baby Cereal,300,g,Flipkart Minutes,250,178,1,SAMPLE
+P042,Baby & Misc,Cerelac,Baby Cereal,300,g,Amazon Now,250,225,1,SAMPLE

@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
 import { Button } from '../ui/Button'
-import type { DataStatus, HorizonDays, Movement, RestockStatus } from '../../types/analytics'
+import type { DataStatus, HorizonDays, Movement, Priority, RestockStatus } from '../../types/analytics'
 
 export const HORIZONS: HorizonDays[] = [7, 14, 30]
 
@@ -18,6 +18,37 @@ const restockStyles: Record<RestockStatus, string> = {
   'No Restocking Needed': 'bg-emerald-50 text-emerald-700 ring-emerald-600/20',
   'Insufficient History': 'bg-slate-50 text-slate-600 ring-slate-500/20',
 }
+
+const priorityStyles: Record<Priority, string> = {
+  High: 'bg-red-50 text-red-700 ring-red-600/20',
+  Medium: 'bg-amber-50 text-amber-700 ring-amber-600/20',
+  Low: 'bg-emerald-50 text-emerald-700 ring-emerald-600/20',
+}
+
+/** Owner-friendly wording for the (unchanged) High / Medium / Low restock priority. */
+export const PRIORITY_LABEL: Record<Priority, string> = {
+  High: 'Restock soon',
+  Medium: 'Plan a restock',
+  Low: 'Stock is healthy',
+}
+
+export const PriorityBadge = ({ priority }: { priority: Priority }) => (
+  <span className={`${badge} ${priorityStyles[priority]}`}>{PRIORITY_LABEL[priority]}</span>
+)
+
+/** Tells the owner which kind of data a figure comes from. The two kinds are never mixed. */
+export const SourceBadge = ({ kind }: { kind: 'business' | 'external' }) => (
+  <span
+    className={`${badge} ${
+      kind === 'business' ? 'bg-slate-50 text-slate-600 ring-slate-500/20' : 'bg-sky-50 text-sky-700 ring-sky-600/20'
+    }`}
+  >
+    {kind === 'business' ? 'Business data' : 'External Indian Market Data'}
+  </span>
+)
+
+/** 0.645 -> "64.5%"; null -> "—". */
+export const formatPercent = (fraction: number | null) => (fraction === null ? '—' : `${Math.round(fraction * 1000) / 10}%`)
 
 export const MovementBadge = ({ movement }: { movement: Movement }) => (
   <span className={`${badge} ${movementStyles[movement]}`}>{movement}</span>

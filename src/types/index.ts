@@ -1,6 +1,19 @@
 export type Category = 'Groceries' | 'Dairy' | 'Bakery' | 'Staples' | 'Household'
 
-export type Unit = 'packs' | 'liters' | 'bags' | 'bottles' | 'trays'
+export type Unit =
+  | 'grams (g)'
+  | 'kilograms (kg)'
+  | 'millilitres (ml)'
+  | 'litres (L)'
+  | 'pieces'
+  | 'packs'
+  | 'boxes'
+  | 'bags'
+  | 'bottles'
+  | 'trays'
+  | 'cans'
+  // Older products may still be stored with this spelling; it is kept so they display and edit correctly.
+  | 'liters'
 
 export type StockStatus = 'Healthy' | 'Low Stock' | 'Out of Stock'
 

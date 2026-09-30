@@ -3,14 +3,25 @@ import { Button } from '../ui/Button'
 import { Modal } from '../ui/Modal'
 import { StatusBadge } from '../ui/StatusBadge'
 import { api, ApiRequestError } from '../../lib/api'
+import { formatDays, wholeDays } from '../../lib/format'
 import type {
   ExplainResponse,
   ForecastResponse,
   HorizonDays,
+  IntelligenceResponse,
   ProductInsightsResponse,
   RestockingResponse,
 } from '../../types/analytics'
-import { historyNote, HorizonSelector, MovementBadge, RestockBadge } from './InsightBits'
+import { ForecastVsActualChart } from '../charts/ForecastVsActualChart'
+import {
+  formatPercent,
+  historyNote,
+  HorizonSelector,
+  MovementBadge,
+  PriorityBadge,
+  RestockBadge,
+  SourceBadge,
+} from './InsightBits'
 
 interface Props {
   productId: string | null
@@ -20,6 +31,7 @@ interface Props {
   insights: ProductInsightsResponse | null
   forecast: ForecastResponse | null
   restocking: RestockingResponse | null
+  intelligence: IntelligenceResponse | null
 }
 
 type Explanation =
@@ -27,6 +39,12 @@ type Explanation =
   | { state: 'loading' }
   | { state: 'error'; message: string }
   | { state: 'ready'; result: ExplainResponse }
+
+const MODEL_LABEL = {
+  'historical-mean': 'Historical average',
+  'moving-average': 'Moving average',
+  'exponential-smoothing': 'Exponential smoothing',
+} as const
 
 const Row = ({ label, value }: { label: string; value: string }) => (
   <div className="flex justify-between gap-4 py-2 text-sm">
@@ -40,7 +58,16 @@ const Row = ({ label, value }: { label: string; value: string }) => (
  * AI explanation of it. The values sent for the explanation are exactly the ones
  * shown here (all calculated by the backend); the frontend changes none of them.
  */
-export function ProductInsightModal({ productId, onClose, days, onDaysChange, insights, forecast, restocking }: Props) {
+export function ProductInsightModal({
+  productId,
+  onClose,
+  days,
+  onDaysChange,
+  insights,
+  forecast,
+  restocking,
+  intelligence,
+}: Props) {
   // Keyed by product and horizon, so switching either drops an explanation that no longer applies.
   const key = `${productId}:${days}`
   const [explained, setExplained] = useState<{ key: string; value: Explanation }>({ key, value: { state: 'idle' } })
@@ -49,6 +76,7 @@ export function ProductInsightModal({ productId, onClose, days, onDaysChange, in
   const insight = insights?.products.find((p) => p.productId === productId)
   const rec = restocking?.products.find((p) => p.productId === productId)
   const fc = forecast?.products.find((p) => p.productId === productId)
+  const intel = intelligence?.products.find((p) => p.productId === productId)
   const ready = Boolean(insight && rec && fc)
 
   async function explain() {
@@ -64,8 +92,16 @@ export function ProductInsightModal({ productId, onClose, days, onDaysChange, in
         recommendedPurchase: rec.recommendedQuantity,
         status: rec.status,
         averageDailyDemand: fc.averageDailyDemand,
-        stockCoverage: insight.stockCoverageDays,
+        // Whole days for what the user reads; the precise value stays in the calculations.
+        stockCoverage: wholeDays(intel?.stockCoverageDays ?? insight.stockCoverageDays),
         forecastHorizonDays: rec.forecastHorizonDays,
+        // Verified extras, sent only when the backend calculated them.
+        ...(intel && {
+          restockPriority: intel.priority,
+          forecastModel: MODEL_LABEL[intel.forecastModel],
+          forecastReliability: intel.dataStatus,
+          forecastErrorPercent: intel.testWape === null ? null : Math.round(intel.testWape * 1000) / 10,
+        }),
       })
       setExplained({ key: requestKey, value: { state: 'ready', result } })
     } catch (err) {
@@ -82,13 +118,12 @@ export function ProductInsightModal({ productId, onClose, days, onDaysChange, in
         <div className="space-y-5">
           <dl className="divide-y divide-slate-100">
             <Row label="Current stock" value={`${insight.currentStock} ${rec.unit}`} />
-            <Row label="Minimum stock" value={String(insight.minimumStockLevel)} />
             <div className="flex items-center justify-between py-2 text-sm">
               <dt className="text-slate-500">Stock status</dt>
               <dd><StatusBadge status={insight.stockStatus} /></dd>
             </div>
-            <Row label="Sales velocity" value={insight.salesVelocity === null ? '—' : `${insight.salesVelocity} per day`} />
-            <Row label="Stock coverage" value={insight.stockCoverageDays === null ? 'Not available (no sales)' : `${insight.stockCoverageDays} days`} />
+            <Row label="Sales velocity" value={insight.salesVelocity === null ? '—' : `${Math.round(insight.salesVelocity)} per day`} />
+            <Row label="Stock coverage" value={insight.stockCoverageDays === null ? 'Not available (no sales)' : formatDays(insight.stockCoverageDays)} />
             <div className="flex items-center justify-between py-2 text-sm">
               <dt className="text-slate-500">Movement</dt>
               <dd><MovementBadge movement={insight.movement} /></dd>
@@ -100,21 +135,58 @@ export function ProductInsightModal({ productId, onClose, days, onDaysChange, in
               <h3 className="text-sm font-semibold text-slate-800">Forecast &amp; restocking</h3>
               <HorizonSelector value={days} onChange={onDaysChange} />
             </div>
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="text-xs font-medium uppercase tracking-wide text-slate-500">Calculated by system</span>
+              <SourceBadge kind="business" />
+              {intel && <PriorityBadge priority={intel.priority} />}
+            </div>
             <dl className="divide-y divide-slate-200">
-              <Row label={`Forecasted demand (${rec.forecastHorizonDays} days)`} value={`≈ ${rec.forecastedDemand}`} />
-              <Row label="Target stock" value={String(rec.targetStock)} />
-              <Row label="Recommended purchase" value={`${rec.recommendedQuantity} ${rec.unit}`} />
+              <Row label={`Expected demand (${rec.forecastHorizonDays} days)`} value={`${Math.round(rec.forecastedDemand)} ${rec.unit}`} />
+              <Row label="Target stock" value={String(Math.round(rec.targetStock))} />
+              <Row label="Suggested restock" value={`${rec.recommendedQuantity} ${rec.unit}`} />
               <div className="flex items-center justify-between py-2 text-sm">
                 <dt className="text-slate-500">Restocking status</dt>
                 <dd><RestockBadge status={rec.status} /></dd>
               </div>
             </dl>
+            <details className="text-xs text-slate-600">
+              <summary className="cursor-pointer font-medium text-slate-500 hover:text-slate-700">View forecast details</summary>
+              <dl className="mt-2 divide-y divide-slate-200">
+                <Row label="Based on" value="Based on recent sales" />
+                <Row
+                label="Forecast reliability"
+                value={
+                  fc.dataStatus === 'Sufficient' ? 'Sufficient history' : fc.dataStatus === 'Limited History' ? 'Limited history' : 'No sales history'
+                }
+              />
+              {fc.test && (
+                <Row
+                  label="Error on recent days"
+                  value={`${formatPercent(fc.test.model.wape)} (simple average: ${formatPercent(fc.test.baseline.wape)})`}
+                />
+              )}
+              </dl>
+            </details>
             {historyNote(rec.dataStatus) && (
               <p className="text-xs text-amber-700">{historyNote(rec.dataStatus)}: treat this estimate with caution.</p>
+            )}
+            {intel && (
+              <p className="text-xs text-slate-600">
+                <span className="font-medium">{intel.advice}</span> {intel.priorityReasons.join(' ')}
+                {intel.reliabilityNote ? ` ${intel.reliabilityNote}` : ''}
+              </p>
             )}
             <p className="text-xs text-slate-500">{rec.reason}</p>
             <p className="text-xs text-slate-400">Estimate based on past sales, not a guarantee.</p>
           </div>
+
+          {fc.testWindow.length > 0 && (
+            <div className="space-y-2">
+              <h3 className="text-sm font-semibold text-slate-800">Forecast vs actual · last {fc.testWindow.length} days</h3>
+              <ForecastVsActualChart data={fc.testWindow} />
+              <p className="text-xs text-slate-400">These recent days were held back: the forecast was built without seeing them.</p>
+            </div>
+          )}
 
           <div>
             {explanation.state === 'idle' && (

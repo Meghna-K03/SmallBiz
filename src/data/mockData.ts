@@ -6,7 +6,7 @@ import type { Expense, Product, Purchase, Sale } from '../types'
  * everything downstream reads from here, never from hardcoded numbers.
  */
 
-export const BUSINESS_NAME = 'Sharma General Store'
+export const BUSINESS_NAME = 'Sharma Grocery Store'
 
 /** Reference "today" for the prototype's dashboard/date-relative views. */
 export const TODAY = '2026-09-29'

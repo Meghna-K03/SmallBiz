@@ -9,6 +9,12 @@
     "db:generate": "prisma generate",
     "db:migrate": "prisma migrate dev",
     "db:seed": "prisma db seed",
+    "db:counts": "tsx scripts/db-counts.ts",
+    "analyze:data": "tsx scripts/analyze-data.ts",
+    "analyze:competitive": "tsx scripts/analyze-data.ts --competitive-only",
+    "verify:api": "tsx scripts/smoke-api.ts",
+    "verify:forecast": "tsx scripts/validate-forecast.ts",
+    "test:pure": "tsx --test --test-concurrency=1 test/forecasting.test.ts test/priority.test.ts test/aiGrounding.test.ts test/externalData.test.ts test/competitive.test.ts test/shopComparison.test.ts test/password.test.ts test/formatDays.test.ts",
     "test": "tsx --test --test-concurrency=1 test/*.test.ts"
   },
   "dependencies": {

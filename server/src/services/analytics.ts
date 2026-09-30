@@ -188,6 +188,23 @@ export async function getLowStockProducts(db: Db = defaultPrisma): Promise<Produ
   return lowStockFrom(await getAllProductStock(db))
 }
 
+/**
+ * Inventory Value = SUM(current stock x purchase price), i.e. what the stock on hand
+ * cost to buy. Summed in integer cents. Negative stock counts as 0.
+ */
+export function calcInventoryValue(items: { currentStock: number; purchasePrice: number }[]): number {
+  return fromCents(items.reduce((sum, i) => sum + Math.max(i.currentStock, 0) * toCents(i.purchasePrice), 0))
+}
+
+export async function getInventoryValue(db: Db = defaultPrisma): Promise<number> {
+  const [products, stock] = await Promise.all([
+    db.product.findMany({ select: { id: true, purchasePrice: true } }),
+    getAllProductStock(db),
+  ])
+  const price = new Map(products.map((p) => [p.id, Number(p.purchasePrice)]))
+  return calcInventoryValue(stock.map((s) => ({ currentStock: s.currentStock, purchasePrice: price.get(s.productId) ?? 0 })))
+}
+
 async function loadSales(db: Db): Promise<SaleRow[]> {
   const rows = await db.sale.findMany({ select: { productId: true, quantity: true, sellingPrice: true, date: true } })
   return rows.map((s) => ({
@@ -265,8 +282,9 @@ export async function getRecentActivity(limit = 10, db: Db = defaultPrisma): Pro
 
 /** All core metrics in one read-only pass. */
 export async function getAnalyticsSummary(db: Db = defaultPrisma) {
-  const [stock, totalRevenue, totalExpenses, topSellingProducts, salesTrend, recentActivity] = await Promise.all([
+  const [stock, inventoryValue, totalRevenue, totalExpenses, topSellingProducts, salesTrend, recentActivity] = await Promise.all([
     getAllProductStock(db),
+    getInventoryValue(db),
     getRevenue(db),
     getExpensesTotal(db),
     getTopSellingProducts(5, db),
@@ -277,6 +295,7 @@ export async function getAnalyticsSummary(db: Db = defaultPrisma) {
     totalRevenue,
     totalExpenses,
     estimatedProfit: fromCents(toCents(totalRevenue) - toCents(totalExpenses)),
+    inventoryValue,
     totalProducts: stock.length,
     lowStockProducts: lowStockFrom(stock),
     topSellingProducts,

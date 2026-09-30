@@ -1,5 +1,5 @@
 import type { Prisma } from '@prisma/client'
-import { ApiError, badRequest } from '../lib/errors'
+import { ApiError, badRequest, conflict } from '../lib/errors'
 import { prisma } from '../lib/prisma'
 
 /**
@@ -70,22 +70,34 @@ export function insufficientStock(available: number): ApiError {
 }
 
 /** Records a sale only if the product has enough stock; never lets stock go negative. */
-export function createSale(data: {
+export async function createSale(data: {
   productId: string
   quantity: number
   sellingPrice: number
   date: Date
 }) {
-  return prisma.$transaction(async (tx) => {
-    if (!(await lockProduct(tx, data.productId))) {
-      throw badRequest('productId does not match any existing product')
-    }
-    const stock = await getStockBreakdown(tx, data.productId)
-    if (!stock || data.quantity > stock.currentStock) {
-      throw insufficientStock(stock?.currentStock ?? 0)
-    }
-    return tx.sale.create({ data })
-  })
+  try {
+    return await prisma.$transaction(
+      async (tx) => {
+        if (!(await lockProduct(tx, data.productId))) {
+          throw badRequest('productId does not match any existing product')
+        }
+        const stock = await getStockBreakdown(tx, data.productId)
+        if (!stock || data.quantity > stock.currentStock) {
+          throw insufficientStock(stock?.currentStock ?? 0)
+        }
+        return tx.sale.create({ data })
+      },
+      // Simultaneous sales of one product queue on the row lock above; the default 2 s / 5 s limits are too
+      // short for that queue on a remote database, so a waiting sale expired (P2028) instead of being checked.
+      { maxWait: 15_000, timeout: 20_000 },
+    )
+  } catch (err) {
+    // Still expired or aborted by the database: nothing was recorded, so ask the client to retry (not a 500).
+    const code = (err as { code?: string })?.code
+    if (code === 'P2028' || code === 'P2034') throw conflict('Another sale for this product was being recorded at the same time. Please try again.')
+    throw err
+  }
 }
 
 /** Records a purchase (restock). Stock only goes up, so no stock check is needed. */

@@ -70,3 +70,36 @@ model Expense {
 
   @@index([date])
 }
+
+// ---- Accounts (sign-in only; no relation to any retail table) ----
+
+model Account {
+  id           String   @id @default(uuid())
+  // Stored lower-case.
+  email        String   @unique
+  // Normalised to the 10 national digits.
+  mobile       String   @unique
+  // scrypt hash with a per-account salt; the password itself is never stored.
+  passwordHash String
+  // Editable shop profile; null = not edited yet (the app shows its defaults).
+  shopName        String?
+  shopDescription String?
+  shopPhone       String?
+  shopLocation    String?
+  createdAt    DateTime @default(now())
+
+  sessions Session[]
+}
+
+model Session {
+  id        String   @id @default(uuid())
+  accountId String
+  // SHA-256 of the session token; the token itself is never stored.
+  tokenHash String   @unique
+  createdAt DateTime @default(now())
+  expiresAt DateTime
+
+  account Account @relation(fields: [accountId], references: [id], onDelete: Cascade)
+
+  @@index([accountId])
+}

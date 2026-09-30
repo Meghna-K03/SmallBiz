@@ -5,7 +5,12 @@ import { FormError } from '../ui/FormError'
 import type { Category, Product, Unit } from '../../types'
 
 const categories: Category[] = ['Groceries', 'Dairy', 'Bakery', 'Staples', 'Household']
-const units: Unit[] = ['packs', 'liters', 'bags', 'bottles', 'trays']
+const unitGroups: { label: string; units: Unit[] }[] = [
+  { label: 'Weight', units: ['grams (g)', 'kilograms (kg)'] },
+  { label: 'Volume', units: ['millilitres (ml)', 'litres (L)'] },
+  { label: 'Count / packaging', units: ['pieces', 'packs', 'boxes', 'bags', 'bottles', 'trays', 'cans'] },
+]
+const defaultUnit: Unit = 'packs'
 
 interface ProductFormProps {
   initialValue?: Product
@@ -16,7 +21,7 @@ interface ProductFormProps {
 export function ProductForm({ initialValue, onSubmit, onCancel }: ProductFormProps) {
   const [name, setName] = useState(initialValue?.name ?? '')
   const [category, setCategory] = useState<Category>(initialValue?.category ?? categories[0])
-  const [unit, setUnit] = useState<Unit>(initialValue?.unit ?? units[0])
+  const [unit, setUnit] = useState<Unit>(initialValue?.unit ?? defaultUnit)
   const [openingStock, setOpeningStock] = useState(String(initialValue?.openingStock ?? ''))
   const [minStockLevel, setMinStockLevel] = useState(String(initialValue?.minStockLevel ?? ''))
   const [purchasePrice, setPurchasePrice] = useState(String(initialValue?.purchasePrice ?? ''))
@@ -79,10 +84,16 @@ export function ProductForm({ initialValue, onSubmit, onCancel }: ProductFormPro
             value={unit}
             onChange={(e) => setUnit(e.target.value as Unit)}
           >
-            {units.map((u) => (
-              <option key={u} value={u}>
-                {u}
-              </option>
+            {/* An older product stored as "liters" keeps that value selectable so editing does not change it. */}
+            {initialValue?.unit === 'liters' && <option value="liters">liters</option>}
+            {unitGroups.map((g) => (
+              <optgroup key={g.label} label={g.label}>
+                {g.units.map((u) => (
+                  <option key={u} value={u}>
+                    {u}
+                  </option>
+                ))}
+              </optgroup>
             ))}
           </select>
         </FormField>

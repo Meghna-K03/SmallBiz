@@ -4,6 +4,7 @@ import { api, ApiRequestError } from '../lib/api'
 import type {
   ForecastResponse,
   HorizonDays,
+  IntelligenceResponse,
   ProductInsightsResponse,
   RestockingResponse,
 } from '../types/analytics'
@@ -72,5 +73,10 @@ export function useAnalytics(days: HorizonDays) {
     [days, ...dataVersion],
     (d) => d.forecastHorizonDays === days,
   )
-  return { insights, forecast, restocking }
+  const intelligence = useSection<IntelligenceResponse>(
+    () => api.getIntelligence(days),
+    [days, ...dataVersion],
+    (d) => d.forecastHorizonDays === days,
+  )
+  return { insights, forecast, restocking, intelligence }
 }

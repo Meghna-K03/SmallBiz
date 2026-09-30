@@ -32,8 +32,11 @@ const counts = async () => ({
   expenses: await prisma.expense.count(),
 })
 
+// Product names must be unique per unit, so each default test product gets its own name.
+const runTag = Date.now().toString(36)
+let productSeq = 0
 const productBody = (over: Record<string, unknown> = {}) => ({
-  name: 'ZZ Test Product',
+  name: `ZZ Test Product ${runTag}-${++productSeq}`,
   category: 'Test',
   unit: 'packs',
   sellingPrice: 10,
@@ -172,7 +175,7 @@ describe('product edits cannot make stock negative', () => {
   it('accepts a valid edit, and returns 404 for a missing product', async () => {
     const id = await newProduct({ openingStock: 10 })
     await sale(id, 8)
-    const ok = await call('PUT', `/api/products/${id}`, productBody({ openingStock: 8, name: 'ZZ Test Renamed' }))
+    const ok = await call('PUT', `/api/products/${id}`, productBody({ openingStock: 8, name: `ZZ Test Renamed ${runTag}` }))
     assert.equal(ok.status, 200)
     assert.equal(await stockOf(id), 0)
     const missing = await call('PUT', '/api/products/00000000-0000-4000-8000-000000000000', productBody())
@@ -249,6 +252,17 @@ describe('product validation', () => {
       assert.equal(res.status, 400, JSON.stringify(over))
       assert.equal(res.body.error.code, 'VALIDATION_ERROR')
     }
+  })
+
+  it('rejects a duplicate product name (case, edge spaces) but allows a different size or unit', async () => {
+    const name = `ZZ Dup Butter ${runTag}`
+    await newProduct({ name, unit: 'packs' })
+    for (const dup of [name, name.toLowerCase(), `  ${name.toUpperCase()}  `, name.replace(' ', '   ')]) {
+      const res = await call('POST', '/api/products', productBody({ name: dup, unit: 'packs' }))
+      assert.equal(res.status, 409, dup)
+    }
+    await newProduct({ name: `${name} 500g`, unit: 'packs' })
+    await newProduct({ name, unit: 'kilograms (kg)' })
   })
 
   it('accepts zero prices and zero stock', async () => {

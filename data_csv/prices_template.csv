@@ -1,0 +1,211 @@
+product_id,category,brand,product_name,pack_size_value,pack_size_unit,platform,mrp_inr,selling_price_inr,available,data_source
+P001,Dairy,Amul,Toned Milk,500,ml,Blinkit,30,,,COLLECTED
+P001,Dairy,Amul,Toned Milk,500,ml,Zepto,30,,,COLLECTED
+P001,Dairy,Amul,Toned Milk,500,ml,Instamart,30,,,COLLECTED
+P001,Dairy,Amul,Toned Milk,500,ml,Flipkart Minutes,30,,,COLLECTED
+P001,Dairy,Amul,Toned Milk,500,ml,Amazon Now,30,,,COLLECTED
+P002,Dairy,Amul,Butter,100,g,Blinkit,62,,,COLLECTED
+P002,Dairy,Amul,Butter,100,g,Zepto,62,,,COLLECTED
+P002,Dairy,Amul,Butter,100,g,Instamart,62,,,COLLECTED
+P002,Dairy,Amul,Butter,100,g,Flipkart Minutes,62,,,COLLECTED
+P002,Dairy,Amul,Butter,100,g,Amazon Now,62,,,COLLECTED
+P003,Dairy,Mother Dairy,Curd,400,g,Blinkit,50,,,COLLECTED
+P003,Dairy,Mother Dairy,Curd,400,g,Zepto,50,,,COLLECTED
+P003,Dairy,Mother Dairy,Curd,400,g,Instamart,50,,,COLLECTED
+P003,Dairy,Mother Dairy,Curd,400,g,Flipkart Minutes,50,,,COLLECTED
+P003,Dairy,Mother Dairy,Curd,400,g,Amazon Now,50,,,COLLECTED
+P004,Dairy,Amul,Cheese Slices,200,g,Blinkit,145,,,COLLECTED
+P004,Dairy,Amul,Cheese Slices,200,g,Zepto,145,,,COLLECTED
+P004,Dairy,Amul,Cheese Slices,200,g,Instamart,145,,,COLLECTED
+P004,Dairy,Amul,Cheese Slices,200,g,Flipkart Minutes,145,,,COLLECTED
+P004,Dairy,Amul,Cheese Slices,200,g,Amazon Now,145,,,COLLECTED
+P005,Dairy,Nestle,Paneer,200,g,Blinkit,95,,,COLLECTED
+P005,Dairy,Nestle,Paneer,200,g,Zepto,95,,,COLLECTED
+P005,Dairy,Nestle,Paneer,200,g,Instamart,95,,,COLLECTED
+P005,Dairy,Nestle,Paneer,200,g,Flipkart Minutes,95,,,COLLECTED
+P005,Dairy,Nestle,Paneer,200,g,Amazon Now,95,,,COLLECTED
+P006,Dairy,Fresh,Eggs 6-pack,6,unit,Blinkit,48,,,COLLECTED
+P006,Dairy,Fresh,Eggs 6-pack,6,unit,Zepto,48,,,COLLECTED
+P006,Dairy,Fresh,Eggs 6-pack,6,unit,Instamart,48,,,COLLECTED
+P006,Dairy,Fresh,Eggs 6-pack,6,unit,Flipkart Minutes,48,,,COLLECTED
+P006,Dairy,Fresh,Eggs 6-pack,6,unit,Amazon Now,48,,,COLLECTED
+P007,Staples,Britannia,Whole Wheat Bread,450,g,Blinkit,55,,,COLLECTED
+P007,Staples,Britannia,Whole Wheat Bread,450,g,Zepto,55,,,COLLECTED
+P007,Staples,Britannia,Whole Wheat Bread,450,g,Instamart,55,,,COLLECTED
+P007,Staples,Britannia,Whole Wheat Bread,450,g,Flipkart Minutes,55,,,COLLECTED
+P007,Staples,Britannia,Whole Wheat Bread,450,g,Amazon Now,55,,,COLLECTED
+P008,Staples,Aashirvaad,Atta Whole Wheat,5000,g,Blinkit,285,,,COLLECTED
+P008,Staples,Aashirvaad,Atta Whole Wheat,5000,g,Zepto,285,,,COLLECTED
+P008,Staples,Aashirvaad,Atta Whole Wheat,5000,g,Instamart,285,,,COLLECTED
+P008,Staples,Aashirvaad,Atta Whole Wheat,5000,g,Flipkart Minutes,285,,,COLLECTED
+P008,Staples,Aashirvaad,Atta Whole Wheat,5000,g,Amazon Now,285,,,COLLECTED
+P009,Staples,India Gate,Basmati Rice,1000,g,Blinkit,165,,,COLLECTED
+P009,Staples,India Gate,Basmati Rice,1000,g,Zepto,165,,,COLLECTED
+P009,Staples,India Gate,Basmati Rice,1000,g,Instamart,165,,,COLLECTED
+P009,Staples,India Gate,Basmati Rice,1000,g,Flipkart Minutes,165,,,COLLECTED
+P009,Staples,India Gate,Basmati Rice,1000,g,Amazon Now,165,,,COLLECTED
+P010,Staples,Fortune,Sunflower Oil,1000,ml,Blinkit,150,,,COLLECTED
+P010,Staples,Fortune,Sunflower Oil,1000,ml,Zepto,150,,,COLLECTED
+P010,Staples,Fortune,Sunflower Oil,1000,ml,Instamart,150,,,COLLECTED
+P010,Staples,Fortune,Sunflower Oil,1000,ml,Flipkart Minutes,150,,,COLLECTED
+P010,Staples,Fortune,Sunflower Oil,1000,ml,Amazon Now,150,,,COLLECTED
+P011,Staples,Tata,Salt,1000,g,Blinkit,28,,,COLLECTED
+P011,Staples,Tata,Salt,1000,g,Zepto,28,,,COLLECTED
+P011,Staples,Tata,Salt,1000,g,Instamart,28,,,COLLECTED
+P011,Staples,Tata,Salt,1000,g,Flipkart Minutes,28,,,COLLECTED
+P011,Staples,Tata,Salt,1000,g,Amazon Now,28,,,COLLECTED
+P012,Staples,Tata Sampann,Toor Dal,1000,g,Blinkit,175,,,COLLECTED
+P012,Staples,Tata Sampann,Toor Dal,1000,g,Zepto,175,,,COLLECTED
+P012,Staples,Tata Sampann,Toor Dal,1000,g,Instamart,175,,,COLLECTED
+P012,Staples,Tata Sampann,Toor Dal,1000,g,Flipkart Minutes,175,,,COLLECTED
+P012,Staples,Tata Sampann,Toor Dal,1000,g,Amazon Now,175,,,COLLECTED
+P013,Staples,Madhur,Sugar,1000,g,Blinkit,55,,,COLLECTED
+P013,Staples,Madhur,Sugar,1000,g,Zepto,55,,,COLLECTED
+P013,Staples,Madhur,Sugar,1000,g,Instamart,55,,,COLLECTED
+P013,Staples,Madhur,Sugar,1000,g,Flipkart Minutes,55,,,COLLECTED
+P013,Staples,Madhur,Sugar,1000,g,Amazon Now,55,,,COLLECTED
+P014,Snacks,Lay's,Classic Salted Chips,90,g,Blinkit,50,,,COLLECTED
+P014,Snacks,Lay's,Classic Salted Chips,90,g,Zepto,50,,,COLLECTED
+P014,Snacks,Lay's,Classic Salted Chips,90,g,Instamart,50,,,COLLECTED
+P014,Snacks,Lay's,Classic Salted Chips,90,g,Flipkart Minutes,50,,,COLLECTED
+P014,Snacks,Lay's,Classic Salted Chips,90,g,Amazon Now,50,,,COLLECTED
+P015,Snacks,Haldiram's,Aloo Bhujia,200,g,Blinkit,62,,,COLLECTED
+P015,Snacks,Haldiram's,Aloo Bhujia,200,g,Zepto,62,,,COLLECTED
+P015,Snacks,Haldiram's,Aloo Bhujia,200,g,Instamart,62,,,COLLECTED
+P015,Snacks,Haldiram's,Aloo Bhujia,200,g,Flipkart Minutes,62,,,COLLECTED
+P015,Snacks,Haldiram's,Aloo Bhujia,200,g,Amazon Now,62,,,COLLECTED
+P016,Snacks,Britannia,Good Day Cookies,200,g,Blinkit,45,,,COLLECTED
+P016,Snacks,Britannia,Good Day Cookies,200,g,Zepto,45,,,COLLECTED
+P016,Snacks,Britannia,Good Day Cookies,200,g,Instamart,45,,,COLLECTED
+P016,Snacks,Britannia,Good Day Cookies,200,g,Flipkart Minutes,45,,,COLLECTED
+P016,Snacks,Britannia,Good Day Cookies,200,g,Amazon Now,45,,,COLLECTED
+P017,Snacks,Parle,Parle-G Biscuits,800,g,Blinkit,90,,,COLLECTED
+P017,Snacks,Parle,Parle-G Biscuits,800,g,Zepto,90,,,COLLECTED
+P017,Snacks,Parle,Parle-G Biscuits,800,g,Instamart,90,,,COLLECTED
+P017,Snacks,Parle,Parle-G Biscuits,800,g,Flipkart Minutes,90,,,COLLECTED
+P017,Snacks,Parle,Parle-G Biscuits,800,g,Amazon Now,90,,,COLLECTED
+P018,Snacks,Cadbury,Dairy Milk,110,g,Blinkit,100,,,COLLECTED
+P018,Snacks,Cadbury,Dairy Milk,110,g,Zepto,100,,,COLLECTED
+P018,Snacks,Cadbury,Dairy Milk,110,g,Instamart,100,,,COLLECTED
+P018,Snacks,Cadbury,Dairy Milk,110,g,Flipkart Minutes,100,,,COLLECTED
+P018,Snacks,Cadbury,Dairy Milk,110,g,Amazon Now,100,,,COLLECTED
+P019,Snacks,Maggi,2-Minute Noodles 12pk,840,g,Blinkit,168,,,COLLECTED
+P019,Snacks,Maggi,2-Minute Noodles 12pk,840,g,Zepto,168,,,COLLECTED
+P019,Snacks,Maggi,2-Minute Noodles 12pk,840,g,Instamart,168,,,COLLECTED
+P019,Snacks,Maggi,2-Minute Noodles 12pk,840,g,Flipkart Minutes,168,,,COLLECTED
+P019,Snacks,Maggi,2-Minute Noodles 12pk,840,g,Amazon Now,168,,,COLLECTED
+P020,Beverages,Coca-Cola,Coke 750ml,750,ml,Blinkit,40,,,COLLECTED
+P020,Beverages,Coca-Cola,Coke 750ml,750,ml,Zepto,40,,,COLLECTED
+P020,Beverages,Coca-Cola,Coke 750ml,750,ml,Instamart,40,,,COLLECTED
+P020,Beverages,Coca-Cola,Coke 750ml,750,ml,Flipkart Minutes,40,,,COLLECTED
+P020,Beverages,Coca-Cola,Coke 750ml,750,ml,Amazon Now,40,,,COLLECTED
+P021,Beverages,Tata Tea,Premium Tea,500,g,Blinkit,275,,,COLLECTED
+P021,Beverages,Tata Tea,Premium Tea,500,g,Zepto,275,,,COLLECTED
+P021,Beverages,Tata Tea,Premium Tea,500,g,Instamart,275,,,COLLECTED
+P021,Beverages,Tata Tea,Premium Tea,500,g,Flipkart Minutes,275,,,COLLECTED
+P021,Beverages,Tata Tea,Premium Tea,500,g,Amazon Now,275,,,COLLECTED
+P022,Beverages,Nescafe,Classic Coffee,100,g,Blinkit,330,,,COLLECTED
+P022,Beverages,Nescafe,Classic Coffee,100,g,Zepto,330,,,COLLECTED
+P022,Beverages,Nescafe,Classic Coffee,100,g,Instamart,330,,,COLLECTED
+P022,Beverages,Nescafe,Classic Coffee,100,g,Flipkart Minutes,330,,,COLLECTED
+P022,Beverages,Nescafe,Classic Coffee,100,g,Amazon Now,330,,,COLLECTED
+P023,Beverages,Real,Mixed Fruit Juice,1000,ml,Blinkit,120,,,COLLECTED
+P023,Beverages,Real,Mixed Fruit Juice,1000,ml,Zepto,120,,,COLLECTED
+P023,Beverages,Real,Mixed Fruit Juice,1000,ml,Instamart,120,,,COLLECTED
+P023,Beverages,Real,Mixed Fruit Juice,1000,ml,Flipkart Minutes,120,,,COLLECTED
+P023,Beverages,Real,Mixed Fruit Juice,1000,ml,Amazon Now,120,,,COLLECTED
+P024,Beverages,Bisleri,Water 1L,1000,ml,Blinkit,20,,,COLLECTED
+P024,Beverages,Bisleri,Water 1L,1000,ml,Zepto,20,,,COLLECTED
+P024,Beverages,Bisleri,Water 1L,1000,ml,Instamart,20,,,COLLECTED
+P024,Beverages,Bisleri,Water 1L,1000,ml,Flipkart Minutes,20,,,COLLECTED
+P024,Beverages,Bisleri,Water 1L,1000,ml,Amazon Now,20,,,COLLECTED
+P025,Personal Care,Colgate,Toothpaste,200,g,Blinkit,115,,,COLLECTED
+P025,Personal Care,Colgate,Toothpaste,200,g,Zepto,115,,,COLLECTED
+P025,Personal Care,Colgate,Toothpaste,200,g,Instamart,115,,,COLLECTED
+P025,Personal Care,Colgate,Toothpaste,200,g,Flipkart Minutes,115,,,COLLECTED
+P025,Personal Care,Colgate,Toothpaste,200,g,Amazon Now,115,,,COLLECTED
+P026,Personal Care,Dove,Soap 3-pack,375,g,Blinkit,165,,,COLLECTED
+P026,Personal Care,Dove,Soap 3-pack,375,g,Zepto,165,,,COLLECTED
+P026,Personal Care,Dove,Soap 3-pack,375,g,Instamart,165,,,COLLECTED
+P026,Personal Care,Dove,Soap 3-pack,375,g,Flipkart Minutes,165,,,COLLECTED
+P026,Personal Care,Dove,Soap 3-pack,375,g,Amazon Now,165,,,COLLECTED
+P027,Personal Care,Head&Shoulders,Shampoo,340,ml,Blinkit,340,,,COLLECTED
+P027,Personal Care,Head&Shoulders,Shampoo,340,ml,Zepto,340,,,COLLECTED
+P027,Personal Care,Head&Shoulders,Shampoo,340,ml,Instamart,340,,,COLLECTED
+P027,Personal Care,Head&Shoulders,Shampoo,340,ml,Flipkart Minutes,340,,,COLLECTED
+P027,Personal Care,Head&Shoulders,Shampoo,340,ml,Amazon Now,340,,,COLLECTED
+P028,Personal Care,Gillette,Razor Cartridges 4s,4,unit,Blinkit,399,,,COLLECTED
+P028,Personal Care,Gillette,Razor Cartridges 4s,4,unit,Zepto,399,,,COLLECTED
+P028,Personal Care,Gillette,Razor Cartridges 4s,4,unit,Instamart,399,,,COLLECTED
+P028,Personal Care,Gillette,Razor Cartridges 4s,4,unit,Flipkart Minutes,399,,,COLLECTED
+P028,Personal Care,Gillette,Razor Cartridges 4s,4,unit,Amazon Now,399,,,COLLECTED
+P029,Personal Care,Nivea,Body Lotion,400,ml,Blinkit,299,,,COLLECTED
+P029,Personal Care,Nivea,Body Lotion,400,ml,Zepto,299,,,COLLECTED
+P029,Personal Care,Nivea,Body Lotion,400,ml,Instamart,299,,,COLLECTED
+P029,Personal Care,Nivea,Body Lotion,400,ml,Flipkart Minutes,299,,,COLLECTED
+P029,Personal Care,Nivea,Body Lotion,400,ml,Amazon Now,299,,,COLLECTED
+P030,Household,Surf Excel,Detergent Powder,1000,g,Blinkit,140,,,COLLECTED
+P030,Household,Surf Excel,Detergent Powder,1000,g,Zepto,140,,,COLLECTED
+P030,Household,Surf Excel,Detergent Powder,1000,g,Instamart,140,,,COLLECTED
+P030,Household,Surf Excel,Detergent Powder,1000,g,Flipkart Minutes,140,,,COLLECTED
+P030,Household,Surf Excel,Detergent Powder,1000,g,Amazon Now,140,,,COLLECTED
+P031,Household,Vim,Dishwash Bar 3s,600,g,Blinkit,60,,,COLLECTED
+P031,Household,Vim,Dishwash Bar 3s,600,g,Zepto,60,,,COLLECTED
+P031,Household,Vim,Dishwash Bar 3s,600,g,Instamart,60,,,COLLECTED
+P031,Household,Vim,Dishwash Bar 3s,600,g,Flipkart Minutes,60,,,COLLECTED
+P031,Household,Vim,Dishwash Bar 3s,600,g,Amazon Now,60,,,COLLECTED
+P032,Household,Harpic,Toilet Cleaner,1000,ml,Blinkit,192,,,COLLECTED
+P032,Household,Harpic,Toilet Cleaner,1000,ml,Zepto,192,,,COLLECTED
+P032,Household,Harpic,Toilet Cleaner,1000,ml,Instamart,192,,,COLLECTED
+P032,Household,Harpic,Toilet Cleaner,1000,ml,Flipkart Minutes,192,,,COLLECTED
+P032,Household,Harpic,Toilet Cleaner,1000,ml,Amazon Now,192,,,COLLECTED
+P033,Household,Lizol,Floor Cleaner,975,ml,Blinkit,210,,,COLLECTED
+P033,Household,Lizol,Floor Cleaner,975,ml,Zepto,210,,,COLLECTED
+P033,Household,Lizol,Floor Cleaner,975,ml,Instamart,210,,,COLLECTED
+P033,Household,Lizol,Floor Cleaner,975,ml,Flipkart Minutes,210,,,COLLECTED
+P033,Household,Lizol,Floor Cleaner,975,ml,Amazon Now,210,,,COLLECTED
+P034,Household,Good Knight,Mosquito Refill,45,ml,Blinkit,80,,,COLLECTED
+P034,Household,Good Knight,Mosquito Refill,45,ml,Zepto,80,,,COLLECTED
+P034,Household,Good Knight,Mosquito Refill,45,ml,Instamart,80,,,COLLECTED
+P034,Household,Good Knight,Mosquito Refill,45,ml,Flipkart Minutes,80,,,COLLECTED
+P034,Household,Good Knight,Mosquito Refill,45,ml,Amazon Now,80,,,COLLECTED
+P035,Household,Origami,Kitchen Towel 2-roll,2,unit,Blinkit,99,,,COLLECTED
+P035,Household,Origami,Kitchen Towel 2-roll,2,unit,Zepto,99,,,COLLECTED
+P035,Household,Origami,Kitchen Towel 2-roll,2,unit,Instamart,99,,,COLLECTED
+P035,Household,Origami,Kitchen Towel 2-roll,2,unit,Flipkart Minutes,99,,,COLLECTED
+P035,Household,Origami,Kitchen Towel 2-roll,2,unit,Amazon Now,99,,,COLLECTED
+P036,Fruits & Veg,Fresh,Banana,1000,g,Blinkit,60,,,COLLECTED
+P036,Fruits & Veg,Fresh,Banana,1000,g,Zepto,60,,,COLLECTED
+P036,Fruits & Veg,Fresh,Banana,1000,g,Instamart,60,,,COLLECTED
+P036,Fruits & Veg,Fresh,Banana,1000,g,Flipkart Minutes,60,,,COLLECTED
+P036,Fruits & Veg,Fresh,Banana,1000,g,Amazon Now,60,,,COLLECTED
+P037,Fruits & Veg,Fresh,Onion,1000,g,Blinkit,45,,,COLLECTED
+P037,Fruits & Veg,Fresh,Onion,1000,g,Zepto,45,,,COLLECTED
+P037,Fruits & Veg,Fresh,Onion,1000,g,Instamart,45,,,COLLECTED
+P037,Fruits & Veg,Fresh,Onion,1000,g,Flipkart Minutes,45,,,COLLECTED
+P037,Fruits & Veg,Fresh,Onion,1000,g,Amazon Now,45,,,COLLECTED
+P038,Fruits & Veg,Fresh,Tomato,1000,g,Blinkit,40,,,COLLECTED
+P038,Fruits & Veg,Fresh,Tomato,1000,g,Zepto,40,,,COLLECTED
+P038,Fruits & Veg,Fresh,Tomato,1000,g,Instamart,40,,,COLLECTED
+P038,Fruits & Veg,Fresh,Tomato,1000,g,Flipkart Minutes,40,,,COLLECTED
+P038,Fruits & Veg,Fresh,Tomato,1000,g,Amazon Now,40,,,COLLECTED
+P039,Fruits & Veg,Fresh,Potato,1000,g,Blinkit,38,,,COLLECTED
+P039,Fruits & Veg,Fresh,Potato,1000,g,Zepto,38,,,COLLECTED
+P039,Fruits & Veg,Fresh,Potato,1000,g,Instamart,38,,,COLLECTED
+P039,Fruits & Veg,Fresh,Potato,1000,g,Flipkart Minutes,38,,,COLLECTED
+P039,Fruits & Veg,Fresh,Potato,1000,g,Amazon Now,38,,,COLLECTED
+P040,Fruits & Veg,Fresh,Apple Shimla,1000,g,Blinkit,180,,,COLLECTED
+P040,Fruits & Veg,Fresh,Apple Shimla,1000,g,Zepto,180,,,COLLECTED
+P040,Fruits & Veg,Fresh,Apple Shimla,1000,g,Instamart,180,,,COLLECTED
+P040,Fruits & Veg,Fresh,Apple Shimla,1000,g,Flipkart Minutes,180,,,COLLECTED
+P040,Fruits & Veg,Fresh,Apple Shimla,1000,g,Amazon Now,180,,,COLLECTED
+P041,Baby & Misc,Pampers,Diapers M 8s,8,unit,Blinkit,199,,,COLLECTED
+P041,Baby & Misc,Pampers,Diapers M 8s,8,unit,Zepto,199,,,COLLECTED
+P041,Baby & Misc,Pampers,Diapers M 8s,8,unit,Instamart,199,,,COLLECTED
+P041,Baby & Misc,Pampers,Diapers M 8s,8,unit,Flipkart Minutes,199,,,COLLECTED
+P041,Baby & Misc,Pampers,Diapers M 8s,8,unit,Amazon Now,199,,,COLLECTED
+P042,Baby & Misc,Cerelac,Baby Cereal,300,g,Blinkit,250,,,COLLECTED
+P042,Baby & Misc,Cerelac,Baby Cereal,300,g,Zepto,250,,,COLLECTED
+P042,Baby & Misc,Cerelac,Baby Cereal,300,g,Instamart,250,,,COLLECTED
+P042,Baby & Misc,Cerelac,Baby Cereal,300,g,Flipkart Minutes,250,,,COLLECTED
+P042,Baby & Misc,Cerelac,Baby Cereal,300,g,Amazon Now,250,,,COLLECTED
