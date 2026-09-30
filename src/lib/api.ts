@@ -1,4 +1,12 @@
 import type { Expense, Product, Purchase, Sale } from '../types'
+import type {
+  AnalyticsSummary,
+  ExplainRequest,
+  ExplainResponse,
+  ForecastResponse,
+  ProductInsightsResponse,
+  RestockingResponse,
+} from '../types/analytics'
 
 /**
  * Thin client for the SmallBiz Lens REST API. The base URL comes from
@@ -76,4 +84,12 @@ export const api = {
 
   getExpenses: () => request<Expense[]>('GET', '/expenses'),
   createExpense: (e: New<Expense>) => request<Expense>('POST', '/expenses', e),
+
+  // Analytics: all values are calculated by the backend.
+  getAnalyticsSummary: () => request<AnalyticsSummary>('GET', '/analytics/summary'),
+  getProductInsights: () => request<ProductInsightsResponse>('GET', '/analytics/product-insights'),
+  getForecast: (days: number) => request<ForecastResponse>('GET', `/analytics/forecast?days=${days}`),
+  getRestocking: (days: number) => request<RestockingResponse>('GET', `/analytics/restocking?days=${days}`),
+  explain: (body: ExplainRequest) => request<ExplainResponse>('POST', '/analytics/explain', body),
 }
+

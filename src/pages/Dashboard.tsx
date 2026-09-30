@@ -4,6 +4,7 @@ import { Card } from '../components/ui/Card'
 import { StatCard } from '../components/ui/StatCard'
 import { StatusBadge } from '../components/ui/StatusBadge'
 import { EmptyState } from '../components/ui/EmptyState'
+import { DashboardInsights } from '../components/insights/DashboardInsights'
 import { SalesTrendChart } from '../components/charts/SalesTrendChart'
 import { useData } from '../context/DataContext'
 import { formatCurrency, formatDate, getTodayISO } from '../lib/format'
@@ -129,6 +130,8 @@ export function Dashboard() {
             )}
           </Card>
         </div>
+
+        <DashboardInsights />
         </DataGate>
       </main>
     </>
